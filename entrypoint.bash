@@ -44,7 +44,7 @@ git remote add upstream "$UPSTREAM_REPO"
 git fetch upstream "${BRANCH_MAPPING%%:*}"
 git remote -v
 
-git rebase --autosquash --autostash "upstream/${BRANCH_MAPPING%%:*}"
+git pull --rebase --autostash upstream "${BRANCH_MAPPING%%:*}"
 git push --force origin "${BRANCH_MAPPING#*:}"
 
 git remote rm upstream
